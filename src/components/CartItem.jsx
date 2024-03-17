@@ -1,4 +1,3 @@
-// CartItem.js
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeFromCart, updateQuantity } from '../actions/cartActions';
@@ -11,7 +10,10 @@ const CartItem = ({ item }) => {
     };
 
     const handleQuantityChange = (change) => {
-        dispatch(updateQuantity(item.id, item.quantity + change));
+        const newQuantity = item.quantity + change;
+        if (newQuantity >= 1 && newQuantity <= 10) {
+            dispatch(updateQuantity(item.id, newQuantity));
+        }
     };
 
     return (
@@ -21,12 +23,12 @@ const CartItem = ({ item }) => {
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
                 <p>Quantity:
-                    <button onClick={() => handleQuantityChange(-1)}>-</button>
+                    <button className="button plus_minus" onClick={() => handleQuantityChange(-1)}>-</button>
                     {item.quantity}
-                    <button onClick={() => handleQuantityChange(1)}>+</button>
+                    <button className="button plus_minus" onClick={() => handleQuantityChange(1)}>+</button>
                 </p>
                 <p>Price: {item.price} руб.</p>
-                <button onClick={handleRemove}>Remove</button>
+                <button className="button remove" onClick={handleRemove}>Remove</button>
             </div>
         </div>
     );

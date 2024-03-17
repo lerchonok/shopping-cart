@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.button {
+  border: none;
+  outline: none;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 7px 10px;
+  border-radius: 100px;
+  color: #fff;
+}
+
+.button.plus_minus {
+  background: #99a1f0; /* Цвет для кнопок "+" и "-" */
+}
+
+.button.remove {
+  background: #72a1f0; /* Цвет для кнопки "Remove" */
+}
+
+.button:hover.plus_minus {
+  background: #58a1f0; /* Цвет при наведении для кнопок "+" и "-" */
+}
+
+.button:hover.remove {
+  background: #a66bbe; /* Цвет при наведении для кнопки "Remove" */
+}
+
+.button:active.plus_minus {
+  background: #0d8aee; /* Цвет при нажатии для кнопок "+" и "-" */
+}
+
+.button:active.remove {
+  background: #8f4bab; /* Цвет при нажатии для кнопки "Remove" */
+}
+

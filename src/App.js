@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import CartList from './components/CartList';
 import Total from './components/Total';
